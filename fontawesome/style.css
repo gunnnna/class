@@ -1,0 +1,10 @@
+
+.section::after{
+    content: "\f159";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* \f159는 개발자모드로 숫자를 복사해온다.
+before 위에 i tag에서 font-family,weight같이 세트로기입
+그리고 pro는 free로 변경해야함 */

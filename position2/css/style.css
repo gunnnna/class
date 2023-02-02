@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.치료::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.전체 {
+    color: red;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 30px;
+    background-color:gray;
+    height: 600px;
+}
+
+.전체 .첫째 {
+    background-color: #2B3A55;
+    padding: 20px;
+}
+
+
+/* 
+첫자 css는 아래 첫자1~3까지 영향을 주는 영역임
+그로인해 mr 2%가 첫자3에 들어가서 영역이 틀어짐
+젤아래줄 첫자3에 mr0%넣어주면서 더 쎈 영향이 들어와서 영역정리됨
+*/
+.전체 .첫째 .첫자 {
+    background-color: #CE7777;
+    width: 32%;
+    margin-right: 2%;
+    height: 200px;
+    float: left;
+}
+
+.전체 .첫째 .첫자.첫자1 {
+    position: relative;
+    /* 기준을 잡아주기위해서 사용 */
+    overflow: hidden;
+    /* 내영역보다 넘치는부분을 hidden하겠다는 의미 */
+}
+
+.전체 .첫째 .첫자.첫자1 .하 {
+    position: relative;
+    /* 상단에 붙은 아래입니다가 영역안으로 들어감 */
+    background-image: url(../image/img1.jpg);
+    /* ../는 상위의 요소를 부르는 것이다 -> 그 아래 하위요소까지 부를수있음 */
+    height: 100%;
+    /* 부모는 자식의 높이를 , 자식은 부모의 넓이를 따라간다 */
+    background-size: cover;
+    /* Cover는 넓이에 맞춰 딱 맞게 들어감, 
+    contain은 1차적으로 넓이를 맞춰서 사진이 여러개 들어감*/
+    background-position: center;
+    /* cover를 입력후 bgp를 center로 넣으면 양측에 알맞게 빠진채로 들어감
+    x축 y축 center center로 중복일때는 하나만 입력해도 인식함 */
+}
+
+.전체 .첫째 .첫자.첫자1 .하 h4 {
+    /* 태그이름에는.을 붙이지않고 h4로 적음 */
+    position: absolute;
+    /* 아무도 포지션이 없어서 젤 윗영역인 body위치로감 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* 아래입니다의 위치를 정중앙으로 */
+}
+
+
+
+.전체 .첫째 .첫자.첫자1 .상 {
+    height: 100%;
+    background-image: url(../image/img2.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    /* ab특징: 인라인요소처럼 자식의 공간만 차지 
+    그래서 넓이를 다시 설정해야한다 w100%사용 */
+    left: 100%;
+    top: 0;
+    width: 100%;
+    transition: 0.3s;
+    /* hover에 시간을 주지않고 본체에 주는이유. 
+    마우스 올리고내려도 본체에 올리면 부드럽게 됨 */
+}
+
+.전체 .첫째 .첫자.첫자1:hover .상 {
+    /* 마우스올리면 뜨게 만드는 코드
+    첫자.첫자1:hover 상 뜻은 첫자.첫자1에 마우스올리면 .상이 나온다는뜻 */
+    left: 0;
+}
+
+.전체 .첫째 .첫자.첫자1 .상 h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.전체 .첫째 .첫자.첫자2>div {
+    height: 100%;
+    position: absolute;
+    /* 이부분이 있어서 Z-INDEX사용가능 */
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.전체 .첫째 .첫자.첫자2>div h4 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.전체 .첫째 .첫자.첫자2 .상 {
+    background-image: url(../image/img3.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    top: -100%;
+    /* z-index는 position이 있어야 사용가능
+    (relative, absolute, fixed) 상단에 P/A이 있기때문에 가능*/
+    transition: 0.3s;
+}
+
+.전체 .첫째 .첫자.첫자2:hover .상 {
+    top: 0;
+    /* 첫칸과 방향이 다른이유는 left/top값의 차이다 */
+}
+
+.전체 .첫째 .첫자.첫자2 .상 h4 {}
+
+.전체 .첫째 .첫자.첫자2 .하 {
+    background-image: url(../image/img4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.전체 .첫째 .첫자.첫자2 .하 h4 {}
+
+
+.전체 .첫째 .첫자.첫자3 {
+    margin-right: 0%;
+    position: relative;
+}
+
+.전체 .첫째 .첫자.첫자3>div {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;
+}
+
+.전체 .첫째 .첫자.첫자3>div h4 {
+    position: absolute;
+    left: 50%;top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.전체 .첫째 .첫자.첫자3 .상 {
+    background-image: url(../image/img5.jpg);
+    z-index: 10;
+    opacity: 0;
+    transform: scale(0.3); /* 크기를 조정하는것 */
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(0.37, 0.33,0.17,1.73);
+}
+.전체 .첫째 .첫자.첫자3:hover .상 {
+    opacity: 1; /* 0-0.5로바꾸면 투명도가 다름을 알수있다 */
+    transform: scale(1);  /* 크기를 조정하는것 */
+    border-radius: 50%;
+}
+
+.전체 .첫째 .첫자.첫자3 .하 {
+    background-image: url(../image/img6.jpg);
+}
+
+.전체 .둘째{
+    background-color: green;
+    /* 
+    %의 기준
+    width - 부모(.전체)의 넓이
+    height - 부모(.전체)의 높이 단 부모가 높이값이 있어야함
+    padding,margin은 상하좌우 모두 부모의 넓이
+    */
+    width: 30%;
+    height: 30%;
+    padding: 5%;
+    margin-top: 5%;
+    border: 5% solid red;
+}

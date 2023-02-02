@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="전체">
+        <!--class를 id로 변경가능/절대 중복안됨/css에 #전체{}로 부름 -->
+        <!-- class명은 중복가능 여러개가능, id는 유일하고 하나만가능 -->
+        <div class="첫째자식">
+            <div class="wrap">
+                <!-- wrap을 만들어서 이미지가 꽉차게바뀜 -->
+                <div class="첫째손자 첫손1">첫째손자1</div>
+                <!-- class 이름을 두개넣은것 , id는 유일하고 하나만 가능 -->
+                <div class="첫째손자 첫손2">첫째손자2</div>
+            </div>
+        </div>
+        <div class="둘째자식">
+            <div class="둘째손자">둘째손자</div>
+        </div>
+        <div class="셋째자식 clear">
+            <!-- 3.손자1,2 깨지기때문에 추가함 -->
+            <div class="셋째손자1">
+                <h4>정렬하는 요소들(순서가 있는 list)</h4>
+                <ol>
+                    <!-- ol은 1.2.3으로 순서가 나옴 -->
+                    <li>coffee</li>
+                    <li>tea</li>
+                    <li>milk</li>
+                </ol>
+            </div>
+            <div class="셋째손자2">
+                <h4>정렬하는 요소들(순서가 없는 list)</h4>
+                <ul>
+                    <!-- ul은 순서가 안나옴 -->
+                    <li>coffee</li>
+                    <li>tea</li>
+                    <li>milk</li>
+                </ul><!--  ol, ul의 자식요소는 li만 가능하다  -->
+            </div>
+        </div>
+        <div class="넷째자식">
+            <div class="넷째손자">넷째손자
+                <dl>
+                    <dt>커피</dt><!-- 설명타이틀title -->
+                    <dd>검정색의 쓴맛의 액체</dd><!-- 설명내용data -->
+
+                    <dt>사과</dt>
+                    <dd>초겨울에 생산되는 맛있는 과일</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

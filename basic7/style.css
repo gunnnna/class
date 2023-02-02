@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+* {margin: 0;padding: 0;}
+
+/* reset */
+/* 폰트크기의 기본값은 16px */
+h1,h2,h3,h4,h5,h6{
+    font-size: 16px;/* 폰트사이즈 */
+    font-weight: normal; /* 폰트두께 */
+}
+a{text-decoration: none; /* 밑줄을 모두 삭제해준다 */
+    color: #223344 ; /* 중복이라 color:#234로 줄일수있다. */
+}
+
+
+.약::after{content: ""; clear:both; display:block;}
+
+
+.전체{background-color: #EAC7C7;
+width: 1000px;
+margin:30px auto 0; padding: 20px; box-sizing: border-box;}
+
+.전체>div+div {
+    margin-top: 30px;
+}
+/* .전체>div+div는 뒤쪽 div에 집중하면됨.
+전체에서 div는 첫째 둘째 세째가 있는데 2.3째만 형인 첫째가 있음
+즉 형이 있는 div를 부르는것으로 2.3째를 불러오는것이라생각하면된다. 
+*/
+
+
+.전체 .첫째 {
+    background-color: #A0C3D2;
+    padding: 20px;
+}
+
+.전체 .첫째:hover{color: green;}
+
+
+.전체 .첫째 .첫자 {
+    background-color: #A31ACB;
+    width: 49%;
+    height: 200px;
+    float: left;
+}
+
+.전체 .첫째 .첫자.첫째자식1 {
+    margin-right: 2%;
+}
+
+.전체 .첫째 .첫자.첫째자식2 {}
+
+.전체 .둘째 {
+    background-color:#EAE0DA;
+}
+
+
+.전체 .둘째 .앵커 {
+    background-color: blue;
+}
+
+.전체 .둘째 p {width: 150px;
+margin-top: 20px;}
+.전체 .둘째 p a{}
+.전체 .둘째 p a img{width: 100%;}
+/* 인라인요소는 공간을 인식하지못한다
+그래서 넓이, 높이값을 주어도 적용되지 않습니다
+예외가 있습니다. img,button 테그는 인라인요소이지만
+넓이와 높이가 적용됩니다.
+
+인라인요소안에는 인라인요소만 들어간다
+-인라인요소안에 블럭요소 들어가지 않음
+-블럭요소안에는 인라인요소, 블럭요소 모두들어감
+
+span p (x) - span태그는 인라인요소다
+p span(o)
+span img(o)
+*/
+
+
+
+
+
+
+
+
+.전체 .세째 {
+    background-color: #FFB26B;
+}

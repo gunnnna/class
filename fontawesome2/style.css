@@ -1,0 +1,27 @@
+/* after라는 가상공간은 content가 필수, 적지않으면 공간 나오지않음 */
+
+/* 폰트어썸 5버전에서 css를 사용하기 위해서는
+font family,font-weight가 같이 들어가야만 한다.
+경로는 클릭한 아이콘 상단 class에 접속하면 css에서 복사가능하다.
+주의할점은 family안에 pro를 free로 변경해준다. */
+
+.section::after{
+    content: "\f2e7";
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+}
+
+.wrap2{
+    position: relative;/* 2차적으로 상위영역에 relative */
+    margin-top: 50px;
+    width: 400px;height: 400px;
+    background-color: palevioletred;
+}
+.wrap2 .section2{
+    position: absolute; /* 1차적으로 아래에 absolute */
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+   /*  transform: translate(-50%,-50%); 정중앙에 넣는 값*/
+    width: 100px;height: 100px;
+    background-color: blue;
+}
